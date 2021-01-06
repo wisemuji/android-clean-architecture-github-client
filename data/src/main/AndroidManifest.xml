@@ -1,5 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wisemuji.data">
-
-    /
-</manifest>
+<manifest package="com.wisemuji.data" />
