@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class FetchProfileResponse(
+data class ProfileResponse(
     @Json(name = "name") val name: String? = null,
     @Json(name = "company") val company: String? = null,
     @Json(name = "blog") val blog: String? = null,
