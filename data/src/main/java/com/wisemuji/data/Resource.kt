@@ -1,7 +1,9 @@
 package com.wisemuji.data
 
 data class Resource<out T>(
-    val status: Status, val data: T?, val errorMessage: String?
+    val status: Status,
+    val data: T?,
+    val errorMessage: String?
 ) {
 
     enum class Status {
