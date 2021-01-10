@@ -11,10 +11,10 @@ interface ProfileRemoteService {
     @GET("/users/{username}")
     suspend fun fetchProfile(
         @Path("username") username: String
-    ) : Response<ProfileResponse>
+    ) : ProfileResponse
 
     @GET("/users/{username}/followers")
     suspend fun fetchFollowers(
         @Path("username") username: String
-    ) : Response<List<FollowersResponse>>
+    ) : List<FollowersResponse>
 }
