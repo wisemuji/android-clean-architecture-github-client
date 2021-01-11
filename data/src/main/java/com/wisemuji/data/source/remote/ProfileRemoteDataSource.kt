@@ -1,9 +1,9 @@
-package com.wisemuji.data.source
+package com.wisemuji.data.source.remote
 
 import com.wisemuji.data.entity.FollowersResponse
 import com.wisemuji.data.entity.ProfileResponse
 
-interface ProfileDataSource {
+interface ProfileRemoteDataSource {
 
     suspend fun fetchProfile(username: String): Result<ProfileResponse>
 
