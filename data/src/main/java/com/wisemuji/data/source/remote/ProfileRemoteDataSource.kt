@@ -5,7 +5,7 @@ import com.wisemuji.data.entity.ProfileResponse
 
 interface ProfileRemoteDataSource {
 
-    suspend fun fetchProfile(username: String): Result<ProfileResponse>
+    suspend fun fetchProfile(username: String): ProfileResponse
 
-    suspend fun fetchFollowers(username: String): Result<List<FollowersResponse>>
+    suspend fun fetchFollowers(username: String): List<FollowersResponse>
 }
