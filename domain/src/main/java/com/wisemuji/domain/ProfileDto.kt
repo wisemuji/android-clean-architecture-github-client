@@ -14,15 +14,17 @@ data class ProfileDto(
     val following: Int? = null,
 ) {
 
-    companion object fun fromEntity(profileResponse: ProfileResponse) = ProfileDto(
-        name = profileResponse.name,
-        company = profileResponse.company,
-        blog = profileResponse.blog,
-        location = profileResponse.location,
-        bio = profileResponse.bio,
-        publicRepos = profileResponse.publicRepos,
-        publicGists = profileResponse.publicGists,
-        followers = profileResponse.followers,
-        following = profileResponse.following,
-    )
+    companion object {
+        fun fromEntity(profileResponse: ProfileResponse) = ProfileDto(
+            name = profileResponse.name,
+            company = profileResponse.company,
+            blog = profileResponse.blog,
+            location = profileResponse.location,
+            bio = profileResponse.bio,
+            publicRepos = profileResponse.publicRepos,
+            publicGists = profileResponse.publicGists,
+            followers = profileResponse.followers,
+            following = profileResponse.following,
+        )
+    }
 }

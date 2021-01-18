@@ -6,7 +6,9 @@ data class FollowersDto(
     val username: String? = null,
 ) {
 
-    companion object fun fromEntity(followersResponse: FollowersResponse) = FollowersDto(
-        username = followersResponse.username
-    )
+    companion object {
+        fun fromEntity(followersResponse: FollowersResponse) = FollowersDto(
+            username = followersResponse.username
+        )
+    }
 }
