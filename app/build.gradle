@@ -38,5 +38,5 @@ dependencies {
 
     implementation TestDependency.JUNIT
     androidTestImplementation TestDependency.ANDROIDX_JUNIT
-    androidTestImplementation TestDependency.ANDROIDX_ESPRESSO
+    androidTestImplementation TestDependency.ESPRESSO
 }

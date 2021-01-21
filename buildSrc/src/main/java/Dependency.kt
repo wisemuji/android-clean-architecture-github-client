@@ -42,5 +42,5 @@ object RemoteDependency {
 object TestDependency {
     const val JUNIT = "junit:junit:4.12"
     const val ANDROIDX_JUNIT = "androidx.test.ext:junit:1.1.2"
-    const val ANDROIDX_ESPRESSO = "androidx.test.espresso:espresso-core:3.3.0"
+    const val ESPRESSO = "androidx.test.espresso:espresso-core:3.3.0"
 }
