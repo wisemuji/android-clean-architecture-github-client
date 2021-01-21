@@ -36,7 +36,7 @@ dependencies {
     implementation AndroidXDependency.LIFECYCLE_EXT
     implementation AndroidXDependency.CORE_KTX
 
-    androidTestImplementation TestDependency.JUNIT
+    implementation TestDependency.JUNIT
     androidTestImplementation TestDependency.ANDROIDX_JUNIT
     androidTestImplementation TestDependency.ANDROIDX_ESPRESSO
 }
