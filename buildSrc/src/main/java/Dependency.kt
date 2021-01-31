@@ -4,6 +4,7 @@ object Version {
     const val COROUTINE = "1.4.2"
     const val HILT = "2.31.2-alpha"
     const val HILT_JETPACK = "1.0.0-alpha03"
+    const val MOSHI = "1.11.0"
 }
 
 object ProjectConfig {
@@ -41,6 +42,8 @@ object CoroutineDependency {
 object RemoteDependency {
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Version.RETROFIT}"
     const val RETROFIT_CONVERTER_MOSHI = "com.squareup.retrofit2:converter-moshi:${Version.RETROFIT}"
+    const val MOSHI = "com.squareup.moshi:moshi:${Version.MOSHI}"
+    const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:${Version.MOSHI}"
 }
 
 object TestDependency {

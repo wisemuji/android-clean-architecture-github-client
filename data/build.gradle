@@ -19,6 +19,8 @@ dependencies {
 
     implementation RemoteDependency.RETROFIT
     implementation RemoteDependency.RETROFIT_CONVERTER_MOSHI
+    implementation RemoteDependency.MOSHI
+    implementation RemoteDependency.MOSHI_KOTLIN
 
     implementation CoroutineDependency.CORE
     implementation CoroutineDependency.ANDROID
