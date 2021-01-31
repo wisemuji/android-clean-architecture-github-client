@@ -1,6 +1,6 @@
 package com.wisemuji.domain.usecase
 
-import com.wisemuji.data.ProfileRepositoryImpl
+import com.wisemuji.data.ProfileRepository
 import com.wisemuji.domain.dto.FollowersDto
 import com.wisemuji.domain.dto.ProfileDto
 import kotlinx.coroutines.CoroutineDispatcher
@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ProfileUseCaseImpl @Inject constructor(
-    private val profileRepository: ProfileRepositoryImpl,
+    private val profileRepository: ProfileRepository,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ProfileUseCase {
 
