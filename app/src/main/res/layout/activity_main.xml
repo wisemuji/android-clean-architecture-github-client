@@ -6,13 +6,116 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/main_searchEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/main_searchButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/main_searchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/main_search_profile"/>
+
+    <TextView
+        android:id="@+id/main_nameLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_searchEditText" />
+
+    <TextView
+        android:id="@+id/main_nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_searchEditText"
+        tools:text="홍길동"/>
+
+    <TextView
+        android:id="@+id/main_locationLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_nameLabelTextView" />
+
+    <TextView
+        android:id="@+id/main_locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_nameTextView"
+        tools:text="서울시"/>
+
+    <TextView
+        android:id="@+id/main_bioLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_bio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_locationLabelTextView" />
+
+    <TextView
+        android:id="@+id/main_bioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_locationTextView"
+        tools:text="안녕하세요! 반갑습니다"/>
+
+    <TextView
+        android:id="@+id/main_publicRepoLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_public_repos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_bioLabelTextView" />
+
+    <TextView
+        android:id="@+id/main_publicRepoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_bioTextView"
+        tools:text="1213"/>
+
+    <TextView
+        android:id="@+id/main_followersLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_followers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_publicRepoLabelTextView" />
+
+    <TextView
+        android:id="@+id/main_followersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_publicRepoTextView"
+        tools:text="13243"/>
+
+    <TextView
+        android:id="@+id/main_followingLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_label_following"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_followersLabelTextView" />
+
+    <TextView
+        android:id="@+id/main_followingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_followersTextView"
+        tools:text="34543"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
