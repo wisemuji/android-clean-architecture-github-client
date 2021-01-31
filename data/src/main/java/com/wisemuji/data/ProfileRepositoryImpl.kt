@@ -5,8 +5,9 @@ import com.wisemuji.data.entity.ProfileResponse
 import com.wisemuji.data.source.remote.ProfileRemoteDataSource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class ProfileRepositoryImpl(
+class ProfileRepositoryImpl @Inject constructor(
     private val remoteDataSource: ProfileRemoteDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) : ProfileRepository {

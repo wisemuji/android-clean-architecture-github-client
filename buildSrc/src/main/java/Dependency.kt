@@ -2,11 +2,15 @@ object Version {
     const val KOTLIN = "1.4.20"
     const val RETROFIT = "2.9.0"
     const val COROUTINE = "1.4.2"
+    const val HILT = "2.31.2-alpha"
+    const val HILT_JETPACK = "1.0.0-alpha03"
 }
 
 object ProjectConfig {
     const val GRADLE = "com.android.tools.build:gradle:4.1.1"
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Version.KOTLIN}"
+    const val HILT_ANDROID_GRADLE_PLUGIN =
+        "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
 }
 
 object AndroidConfig {
@@ -43,4 +47,10 @@ object TestDependency {
     const val JUNIT = "junit:junit:4.12"
     const val ANDROIDX_JUNIT = "androidx.test.ext:junit:1.1.2"
     const val ESPRESSO = "androidx.test.espresso:espresso-core:3.3.0"
+}
+
+object HiltConfig {
+    const val HILT_ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
+    const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Version.HILT}"
+    const val HILT_COMPILER = "androidx.hilt:hilt-compiler:${Version.HILT_JETPACK}"
 }

@@ -6,8 +6,9 @@ import com.wisemuji.domain.dto.ProfileDto
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class ProfileUseCaseImpl(
+class ProfileUseCaseImpl @Inject constructor(
     private val profileRepository: ProfileRepositoryImpl,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ProfileUseCase {

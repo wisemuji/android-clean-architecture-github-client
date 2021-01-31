@@ -1,5 +1,8 @@
-apply plugin: 'java-library'
-apply plugin: 'kotlin'
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
@@ -15,4 +18,9 @@ dependencies {
     implementation project(":data")
     implementation CoroutineDependency.CORE
     implementation CoroutineDependency.ANDROID
+
+    implementation HiltConfig.HILT_ANDROID
+
+    kapt HiltConfig.HILT_ANDROID_COMPILER
+    kapt HiltConfig.HILT_COMPILER
 }
