@@ -1,6 +1,18 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.freeCompilerArgs = ["-Xallow-result-return-type"]
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.freeCompilerArgs = ["-Xallow-result-return-type"]
+}
+
 dependencies {
     implementation project(":data")
+    implementation CoroutineDependency.CORE
+    implementation CoroutineDependency.ANDROID
 }
