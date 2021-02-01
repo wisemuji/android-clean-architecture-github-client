@@ -1,0 +1,42 @@
+package com.wisemuji.githubclient.ui.main
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.wisemuji.domain.dto.ProfileDto
+import com.wisemuji.domain.usecase.ProfileUseCase
+import com.wisemuji.domain.usecase.ProfileUseCaseImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val profileUseCase: ProfileUseCaseImpl,
+) : ViewModel() {
+
+    private val _onError = MutableLiveData<Throwable>()
+    val onError: LiveData<Throwable> = _onError
+
+    private val _profile = MutableLiveData<ProfileDto>()
+    val profile: LiveData<ProfileDto> = _profile
+
+    val username = MutableLiveData<String>("")
+
+    fun setupView() = viewModelScope.launch {
+        fetchProfile(username = username.value?: "")
+    }
+
+    suspend fun fetchProfile(username: String) {
+        profileUseCase
+            .fetchProfile(username)
+            .onSuccess {
+                _profile.postValue(it)
+            }
+            .onFailure {
+                _onError.postValue(it)
+            }
+    }
+
+}
