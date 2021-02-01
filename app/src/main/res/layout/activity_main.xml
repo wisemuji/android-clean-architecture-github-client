@@ -20,6 +20,7 @@
             android:id="@+id/main_searchEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@={viewModel.username}"
             app:layout_constraintEnd_toStartOf="@+id/main_searchButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
             android:id="@+id/main_searchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onClickSearch()}"
             android:text="@string/main_search_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +46,7 @@
             android:id="@+id/main_nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{viewModel.profile.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_searchEditText"
             tools:text="홍길동" />
@@ -60,6 +63,7 @@
             android:id="@+id/main_locationTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{viewModel.profile.location}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_nameTextView"
             tools:text="서울시" />
@@ -76,6 +80,7 @@
             android:id="@+id/main_bioTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{viewModel.profile.bio}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_locationTextView"
             tools:text="안녕하세요! 반갑습니다" />
@@ -92,6 +97,7 @@
             android:id="@+id/main_publicRepoTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{Integer.toString(viewModel.profile.publicRepos)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_bioTextView"
             tools:text="1213" />
@@ -108,6 +114,7 @@
             android:id="@+id/main_followersTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{Integer.toString(viewModel.profile.followers)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_publicRepoTextView"
             tools:text="13243" />
@@ -124,6 +131,7 @@
             android:id="@+id/main_followingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{Integer.toString(viewModel.profile.following)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_followersTextView"
             tools:text="34543" />

@@ -24,7 +24,7 @@ class MainViewModel @Inject constructor(
 
     val username = MutableLiveData<String>("")
 
-    fun setupView() = viewModelScope.launch {
+    fun onClickSearch() = viewModelScope.launch {
         fetchProfile(username = username.value?: "")
     }
 

@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupBinding()
-        setupView()
     }
 
     private fun setupBinding() {
@@ -29,9 +28,5 @@ class MainActivity : AppCompatActivity() {
                 it.lifecycleOwner = this
                 it.viewModel = viewModel
             }
-    }
-
-    private fun setupView() {
-        viewModel.setupView()
     }
 }
