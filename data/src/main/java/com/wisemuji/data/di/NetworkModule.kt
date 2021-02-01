@@ -21,7 +21,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMoshi(kotlinJsonAdapterFactory: KotlinJsonAdapterFactory): Moshi = Moshi.Builder()
+    fun provideMoshi(kotlinJsonAdapterFactory: KotlinJsonAdapterFactory): Moshi = Moshi
+        .Builder()
         .add(kotlinJsonAdapterFactory)
         .build()
 
@@ -32,17 +33,17 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttp(): OkHttpClient =
-        OkHttpClient
-            .Builder()
-            .build()
+    fun provideOkHttp(): OkHttpClient = OkHttpClient
+        .Builder()
+        .build()
 
     @Provides
     @Singleton
     fun provideRetrofitClient(
         okHttp: OkHttpClient,
         moshiConverterFactory: MoshiConverterFactory
-    ): Retrofit = Retrofit.Builder()
+    ): Retrofit = Retrofit
+        .Builder()
         .addConverterFactory(moshiConverterFactory)
         .client(okHttp)
         .baseUrl(URL)
