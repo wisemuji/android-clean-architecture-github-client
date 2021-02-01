@@ -17,19 +17,15 @@ class ProfileUseCaseImpl @Inject constructor(
         withContext(ioDispatcher) {
             profileRepository
                 .fetchProfile(username)
-                .map {
-                    ProfileDto.fromEntity(it)
-                }
+                .map(ProfileDto::fromEntity(it))
         }
 
     override suspend fun fetchFollowers(username: String): Result<List<FollowersDto>> =
         withContext(ioDispatcher) {
             profileRepository
                 .fetchFollowers(username)
-                .map {
-                    it.map { response ->
-                        FollowersDto.fromEntity(response)
-                    }
+                .map { list ->
+                    list.map(FollowersDto::fromEntity(it))
                 }
         }
 
