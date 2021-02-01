@@ -1,6 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
 
 android {
     compileSdkVersion AndroidConfig.COMPILE_TARGET_SDK
@@ -26,17 +30,43 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
+    implementation project(":domain")
+    implementation project(":data")
     implementation BasicDependency.KOTLIN_STDLIB
 
     implementation AndroidXDependency.APPCOMPAT
     implementation AndroidXDependency.CONSTRAINT_LAYOUT
     implementation AndroidXDependency.LIFECYCLE_EXT
+    implementation AndroidXDependency.LIFECYCLE_VIEWMODEL
     implementation AndroidXDependency.CORE_KTX
+    implementation AndroidXDependency.ACTIVITY_KTX
+
+    implementation RemoteDependency.RETROFIT
+    implementation RemoteDependency.RETROFIT_CONVERTER_MOSHI
+    implementation RemoteDependency.MOSHI
+    implementation RemoteDependency.MOSHI_KOTLIN
 
     implementation TestDependency.JUNIT
     androidTestImplementation TestDependency.ANDROIDX_JUNIT
     androidTestImplementation TestDependency.ESPRESSO
+
+    implementation CoroutineDependency.CORE
+    implementation CoroutineDependency.ANDROID
+
+    implementation HiltConfig.HILT_ANDROID
+    implementation HiltConfig.HILT_VIEWMODEL
+
+    kapt HiltConfig.HILT_ANDROID_COMPILER
+    kapt HiltConfig.HILT_COMPILER
 }

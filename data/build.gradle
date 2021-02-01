@@ -1,17 +1,20 @@
 plugins {
-    id 'java-library'
-    id 'kotlin'
+    id 'com.android.library'
+    id 'kotlin-android'
     id 'kotlin-kapt'
 }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.freeCompilerArgs = ["-Xallow-result-return-type"]
-}
+android {
+    compileSdkVersion AndroidConfig.COMPILE_TARGET_SDK
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.freeCompilerArgs = ["-Xallow-result-return-type"]
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+        freeCompilerArgs = freeCompilerArgs + "-Xallow-result-return-type"
+    }
 }
 
 dependencies {
