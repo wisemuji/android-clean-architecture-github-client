@@ -17,7 +17,7 @@ class ProfileUseCaseImpl @Inject constructor(
         withContext(ioDispatcher) {
             profileRepository
                 .fetchProfile(username)
-                .map(ProfileDto::fromEntity(it))
+                .map(ProfileDto::fromEntity)
         }
 
     override suspend fun fetchFollowers(username: String): Result<List<FollowersDto>> =
@@ -25,7 +25,7 @@ class ProfileUseCaseImpl @Inject constructor(
             profileRepository
                 .fetchFollowers(username)
                 .map { list ->
-                    list.map(FollowersDto::fromEntity(it))
+                    list.map(FollowersDto::fromEntity)
                 }
         }
 
