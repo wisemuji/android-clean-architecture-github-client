@@ -3,15 +3,15 @@ package com.wisemuji.domain.dto
 import com.wisemuji.data.entity.ProfileResponse
 
 data class ProfileDto(
-    val name: String? = null,
-    val company: String? = null,
-    val blog: String? = null,
-    val location: String? = null,
-    val bio: String? = null,
-    val publicRepos: Int? = null,
-    val publicGists: Int? = null,
-    val followers: Int? = null,
-    val following: Int? = null,
+    val name: String?,
+    val company: String?,
+    val blog: String?,
+    val location: String?,
+    val bio: String?,
+    val publicRepos: Int?,
+    val publicGists: Int?,
+    val followers: Int?,
+    val following: Int?,
 ) {
 
     companion object {
