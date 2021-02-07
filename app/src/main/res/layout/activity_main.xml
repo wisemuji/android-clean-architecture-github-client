@@ -58,6 +58,16 @@
             app:layout_constraintTop_toBottomOf="@id/main_name_label_text_view"
             tools:text="홍길동" />
 
+        <ImageView
+            android:id="@+id/main_avatarImageView"
+            bind_imageUrl="@{viewModel.profile.avatarUrl}"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/main_nameLabelTextView"
+            tools:background="@color/colorPrimary"/>
+
         <TextView
             android:id="@+id/main_location_label_text_view"
             android:layout_width="wrap_content"
