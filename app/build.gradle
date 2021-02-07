@@ -63,6 +63,8 @@ dependencies {
     implementation HiltConfig.HILT_ANDROID
     implementation HiltConfig.HILT_VIEWMODEL
 
+    implementation EtcDependency.GLIDE
+
     kapt HiltConfig.HILT_ANDROID_COMPILER
     kapt HiltConfig.HILT_COMPILER
 
