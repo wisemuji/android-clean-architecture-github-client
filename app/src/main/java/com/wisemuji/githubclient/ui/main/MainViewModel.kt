@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val profileUseCase: ProfileUseCase,
+    private val profileUseCase: ProfileUseCaseImpl,
 ) : ViewModel() {
 
     private val _onError = MutableLiveData<Throwable>()
@@ -24,7 +24,7 @@ class MainViewModel @Inject constructor(
 
     val username = MutableLiveData<String>("")
 
-    fun search() = viewModelScope.launch {
+    fun onClickSearch() = viewModelScope.launch {
         fetchProfile(username = username.value?: "")
     }
 
