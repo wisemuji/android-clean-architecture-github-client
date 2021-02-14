@@ -3,8 +3,9 @@ object Version {
     const val RETROFIT = "2.9.0"
     const val COROUTINE = "1.4.2"
     const val HILT = "2.31.2-alpha"
-    const val HILT_JETPACK = "1.0.0-alpha03"
+    const val HILT_JETPACK = "1.0.0-alpha02"
     const val MOSHI = "1.11.0"
+    const val LIFECYCLE = "2.2.0"
 }
 
 object ProjectConfig {
@@ -29,9 +30,11 @@ object BasicDependency {
 
 object AndroidXDependency {
     const val CORE_KTX = "androidx.core:core-ktx:1.3.2"
+    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0"
     const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.0.4"
     const val APPCOMPAT = "androidx.appcompat:appcompat:1.2.0"
-    const val LIFECYCLE_EXT = "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    const val LIFECYCLE_EXT = "androidx.lifecycle:lifecycle-extensions:${Version.LIFECYCLE}"
+    const val LIFECYCLE_VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.LIFECYCLE}"
 }
 
 object CoroutineDependency {
@@ -55,5 +58,10 @@ object TestDependency {
 object HiltConfig {
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
     const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Version.HILT}"
+    const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Version.HILT_JETPACK}"
     const val HILT_COMPILER = "androidx.hilt:hilt-compiler:${Version.HILT_JETPACK}"
+}
+
+object EtcDependency {
+    const val GLIDE = "com.github.bumptech.glide:glide:4.12.0"
 }

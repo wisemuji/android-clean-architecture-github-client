@@ -1,0 +1,30 @@
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation BasicDependency.KOTLIN_STDLIB
+
+    implementation RemoteDependency.RETROFIT
+    implementation RemoteDependency.RETROFIT_CONVERTER_MOSHI
+    implementation RemoteDependency.MOSHI
+    implementation RemoteDependency.MOSHI_KOTLIN
+
+    implementation CoroutineDependency.CORE
+    implementation CoroutineDependency.ANDROID
+
+    implementation HiltConfig.HILT_ANDROID
+    implementation HiltConfig.HILT_VIEWMODEL
+
+    kapt HiltConfig.HILT_ANDROID_COMPILER
+    kapt HiltConfig.HILT_COMPILER
+
+    implementation TestDependency.JUNIT
+}

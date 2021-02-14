@@ -1,6 +1,11 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: "$rootDir/common.gradle"
 
 android {
     compileSdkVersion AndroidConfig.COMPILE_TARGET_SDK
@@ -21,22 +26,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
-    implementation BasicDependency.KOTLIN_STDLIB
+    implementation project(":common")
+    implementation project(":domain")
+    implementation project(":data")
 
     implementation AndroidXDependency.APPCOMPAT
     implementation AndroidXDependency.CONSTRAINT_LAYOUT
     implementation AndroidXDependency.LIFECYCLE_EXT
+    implementation AndroidXDependency.LIFECYCLE_VIEWMODEL
     implementation AndroidXDependency.CORE_KTX
+    implementation AndroidXDependency.ACTIVITY_KTX
 
-    implementation TestDependency.JUNIT
+    implementation EtcDependency.GLIDE
+
     androidTestImplementation TestDependency.ANDROIDX_JUNIT
     androidTestImplementation TestDependency.ESPRESSO
 }
