@@ -32,7 +32,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_1_8
     }
 
     buildFeatures {
@@ -57,10 +57,6 @@ dependencies {
     implementation RemoteDependency.MOSHI
     implementation RemoteDependency.MOSHI_KOTLIN
 
-    implementation TestDependency.JUNIT
-    androidTestImplementation TestDependency.ANDROIDX_JUNIT
-    androidTestImplementation TestDependency.ESPRESSO
-
     implementation CoroutineDependency.CORE
     implementation CoroutineDependency.ANDROID
 
@@ -69,4 +65,8 @@ dependencies {
 
     kapt HiltConfig.HILT_ANDROID_COMPILER
     kapt HiltConfig.HILT_COMPILER
+
+    implementation TestDependency.JUNIT
+    androidTestImplementation TestDependency.ANDROIDX_JUNIT
+    androidTestImplementation TestDependency.ESPRESSO
 }
