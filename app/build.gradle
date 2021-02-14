@@ -1,10 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
+
+apply from: "$rootDir/common.gradle"
 
 android {
     compileSdkVersion AndroidConfig.COMPILE_TARGET_SDK
@@ -25,25 +26,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-    }
-
-    buildFeatures {
-        dataBinding = true
-    }
 }
 
 dependencies {
+    implementation project(":common")
     implementation project(":domain")
     implementation project(":data")
-    implementation BasicDependency.KOTLIN_STDLIB
 
     implementation AndroidXDependency.APPCOMPAT
     implementation AndroidXDependency.CONSTRAINT_LAYOUT
@@ -52,23 +40,8 @@ dependencies {
     implementation AndroidXDependency.CORE_KTX
     implementation AndroidXDependency.ACTIVITY_KTX
 
-    implementation RemoteDependency.RETROFIT
-    implementation RemoteDependency.RETROFIT_CONVERTER_MOSHI
-    implementation RemoteDependency.MOSHI
-    implementation RemoteDependency.MOSHI_KOTLIN
-
-    implementation CoroutineDependency.CORE
-    implementation CoroutineDependency.ANDROID
-
-    implementation HiltConfig.HILT_ANDROID
-    implementation HiltConfig.HILT_VIEWMODEL
-
     implementation EtcDependency.GLIDE
 
-    kapt HiltConfig.HILT_ANDROID_COMPILER
-    kapt HiltConfig.HILT_COMPILER
-
-    implementation TestDependency.JUNIT
     androidTestImplementation TestDependency.ANDROIDX_JUNIT
     androidTestImplementation TestDependency.ESPRESSO
 }

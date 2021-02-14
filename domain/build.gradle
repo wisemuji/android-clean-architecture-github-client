@@ -4,26 +4,9 @@ plugins {
     id 'kotlin-kapt'
 }
 
-android {
-    compileSdkVersion AndroidConfig.COMPILE_TARGET_SDK
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
-        freeCompilerArgs = freeCompilerArgs + "-Xallow-result-return-type"
-    }
-}
+apply from: "$rootDir/common.gradle"
 
 dependencies {
+    implementation project(":common")
     implementation project(":data")
-    implementation CoroutineDependency.CORE
-    implementation CoroutineDependency.ANDROID
-
-    implementation HiltConfig.HILT_ANDROID
-
-    kapt HiltConfig.HILT_ANDROID_COMPILER
-    kapt HiltConfig.HILT_COMPILER
 }
