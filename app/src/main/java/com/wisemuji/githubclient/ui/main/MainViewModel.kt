@@ -32,10 +32,10 @@ class MainViewModel @Inject constructor(
         profileUseCase
             .fetchProfile(username)
             .onSuccess {
-                _profile.postValue(it)
+                _profile.value = it
             }
             .onFailure {
-                _onError.postValue(it)
+                _onError.value = it
             }
     }
 
