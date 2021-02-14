@@ -65,7 +65,7 @@
             android:layout_height="120dp"
             android:adjustViewBounds="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/main_nameLabelTextView"
+            app:layout_constraintTop_toTopOf="@id/main_name_label_text_view"
             tools:background="@color/colorPrimary"/>
 
         <TextView
