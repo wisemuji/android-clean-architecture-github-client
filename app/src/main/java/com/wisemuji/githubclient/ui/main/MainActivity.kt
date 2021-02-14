@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.wisemuji.githubclient.R
 import com.wisemuji.githubclient.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +20,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupBinding()
+        setupObserver()
+    }
+
+    private fun setupObserver() {
+        val lifecycleOwner = this
+        viewModel.run {
+            username.observe(
+                lifecycleOwner, Observer {
+                    viewModel.search()
+                }
+            )
+        }
     }
 
     private fun setupBinding() {
