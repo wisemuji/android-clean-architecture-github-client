@@ -17,16 +17,16 @@
         tools:context=".ui.main.MainActivity">
 
         <EditText
-            android:id="@+id/main_searchEditText"
+            android:id="@+id/main_search_edit_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@={viewModel.username}"
-            app:layout_constraintEnd_toStartOf="@+id/main_searchButton"
+            app:layout_constraintEnd_toStartOf="@+id/main_search_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/main_searchButton"
+            android:id="@+id/main_search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.onClickSearch()}"
@@ -35,105 +35,105 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/main_nameLabelTextView"
+            android:id="@+id/main_name_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_searchEditText" />
+            app:layout_constraintTop_toBottomOf="@id/main_search_edit_text" />
 
         <TextView
-            android:id="@+id/main_nameTextView"
+            android:id="@+id/main_name_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.name}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_searchEditText"
+            app:layout_constraintTop_toBottomOf="@id/main_search_edit_text"
             tools:text="홍길동" />
 
         <TextView
-            android:id="@+id/main_locationLabelTextView"
+            android:id="@+id/main_location_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_location"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_nameLabelTextView" />
+            app:layout_constraintTop_toBottomOf="@id/main_name_label_text_view" />
 
         <TextView
-            android:id="@+id/main_locationTextView"
+            android:id="@+id/main_location_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.location}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_nameTextView"
+            app:layout_constraintTop_toBottomOf="@id/main_name_text_view"
             tools:text="서울시" />
 
         <TextView
-            android:id="@+id/main_bioLabelTextView"
+            android:id="@+id/main_bio_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_bio"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_locationLabelTextView" />
+            app:layout_constraintTop_toBottomOf="@id/main_location_label_text_view" />
 
         <TextView
-            android:id="@+id/main_bioTextView"
+            android:id="@+id/main_bio_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.bio}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_locationTextView"
+            app:layout_constraintTop_toBottomOf="@id/main_location_text_view"
             tools:text="안녕하세요! 반갑습니다" />
 
         <TextView
-            android:id="@+id/main_publicRepoLabelTextView"
+            android:id="@+id/main_public_repo_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_public_repos"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_bioLabelTextView" />
+            app:layout_constraintTop_toBottomOf="@id/main_bio_label_text_view" />
 
         <TextView
-            android:id="@+id/main_publicRepoTextView"
+            android:id="@+id/main_public_repo_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{Integer.toString(viewModel.profile.publicRepos)}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_bioTextView"
+            app:layout_constraintTop_toBottomOf="@id/main_bio_text_view"
             tools:text="1213" />
 
         <TextView
-            android:id="@+id/main_followersLabelTextView"
+            android:id="@+id/main_followers_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_followers"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_publicRepoLabelTextView" />
+            app:layout_constraintTop_toBottomOf="@id/main_public_repo_label_text_view" />
 
         <TextView
-            android:id="@+id/main_followersTextView"
+            android:id="@+id/main_followers_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{Integer.toString(viewModel.profile.followers)}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_publicRepoTextView"
+            app:layout_constraintTop_toBottomOf="@id/main_public_repo_text_view"
             tools:text="13243" />
 
         <TextView
-            android:id="@+id/main_followingLabelTextView"
+            android:id="@+id/main_following_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_label_following"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_followersLabelTextView" />
+            app:layout_constraintTop_toBottomOf="@id/main_followers_label_text_view" />
 
         <TextView
-            android:id="@+id/main_followingTextView"
+            android:id="@+id/main_following_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{Integer.toString(viewModel.profile.following)}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_followersTextView"
+            app:layout_constraintTop_toBottomOf="@id/main_followers_text_view"
             tools:text="34543" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
