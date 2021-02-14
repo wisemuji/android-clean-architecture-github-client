@@ -17,10 +17,10 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _onError = MutableLiveData<Throwable>()
-    val onError: LiveData<Throwable> = _onError
+    val onError: LiveData<Throwable> get() = _onError
 
     private val _profile = MutableLiveData<ProfileDto>()
-    val profile: LiveData<ProfileDto> = _profile
+    val profile: LiveData<ProfileDto> get() = _profile
 
     val username = MutableLiveData<String>("")
 
