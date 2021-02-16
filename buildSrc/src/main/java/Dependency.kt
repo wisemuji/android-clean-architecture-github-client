@@ -61,3 +61,7 @@ object HiltConfig {
     const val HILT_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Version.HILT_JETPACK}"
     const val HILT_COMPILER = "androidx.hilt:hilt-compiler:${Version.HILT_JETPACK}"
 }
+
+object EtcDependency {
+    const val GLIDE = "com.github.bumptech.glide:glide:4.12.0"
+}

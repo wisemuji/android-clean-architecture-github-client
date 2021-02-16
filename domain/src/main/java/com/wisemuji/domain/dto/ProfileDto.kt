@@ -4,6 +4,7 @@ import com.wisemuji.data.entity.ProfileResponse
 
 data class ProfileDto(
     val name: String?,
+    val avatarUrl: String?,
     val company: String?,
     val blog: String?,
     val location: String?,
@@ -18,6 +19,7 @@ data class ProfileDto(
         fun fromEntity(profileResponse: ProfileResponse) =
             ProfileDto(
                 name = profileResponse.name,
+                avatarUrl = profileResponse.avatarUrl,
                 company = profileResponse.company,
                 blog = profileResponse.blog,
                 location = profileResponse.location,

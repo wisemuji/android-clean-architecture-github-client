@@ -14,6 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".ui.main.MainActivity">
 
         <EditText
@@ -21,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@={viewModel.username}"
-            app:layout_constraintEnd_toStartOf="@+id/main_search_button"
+            app:layout_constraintEnd_toStartOf="@id/main_search_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +39,11 @@
             android:id="@+id/main_name_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:text="@string/main_label_name"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/main_search_edit_text" />
 
@@ -47,93 +52,166 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.name}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_search_edit_text"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/main_name_label_text_view"
+            app:layout_constraintTop_toBottomOf="@id/main_name_label_text_view"
             tools:text="홍길동" />
+
+        <ImageView
+            android:id="@+id/main_avatarImageView"
+            bind_imageUrl="@{viewModel.profile.avatarUrl}"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/main_name_label_text_view"
+            tools:background="@color/colorPrimary"/>
 
         <TextView
             android:id="@+id/main_location_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:text="@string/main_label_location"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_name_label_text_view" />
+            app:layout_constraintTop_toBottomOf="@id/main_name_text_view" />
 
         <TextView
             android:id="@+id/main_location_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.location}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_name_text_view"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/main_location_label_text_view"
+            app:layout_constraintTop_toBottomOf="@id/main_location_label_text_view"
             tools:text="서울시" />
 
         <TextView
             android:id="@+id/main_bio_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:text="@string/main_label_bio"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_location_label_text_view" />
+            app:layout_constraintTop_toBottomOf="@id/main_location_text_view" />
 
         <TextView
             android:id="@+id/main_bio_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{viewModel.profile.bio}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_location_text_view"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/main_bio_label_text_view"
+            app:layout_constraintTop_toBottomOf="@id/main_bio_label_text_view"
             tools:text="안녕하세요! 반갑습니다" />
 
         <TextView
             android:id="@+id/main_public_repo_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
             android:text="@string/main_label_public_repos"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_bio_label_text_view" />
+            app:layout_constraintTop_toBottomOf="@id/main_bio_text_view" />
 
         <TextView
             android:id="@+id/main_public_repo_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="@{Integer.toString(viewModel.profile.publicRepos)}"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/main_public_repo_label_text_view"
+            app:layout_constraintStart_toEndOf="@id/main_public_repo_label_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_public_repo_label_text_view"
+            tools:text="1213" />
+
+        <TextView
+            android:id="@+id/main_public_gist_label_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@string/main_label_public_gists"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/main_public_repo_label_text_view"
+            app:layout_constraintEnd_toStartOf="@id/main_public_gist_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_public_repo_label_text_view" />
+
+        <TextView
+            android:id="@+id/main_public_gist_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(viewModel.profile.publicGists)}"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/main_public_repo_label_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_bio_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_public_repo_label_text_view"
             tools:text="1213" />
 
         <TextView
             android:id="@+id/main_followers_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:text="@string/main_label_followers"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_public_repo_label_text_view" />
+            app:layout_constraintTop_toBottomOf="@id/main_public_repo_text_view" />
 
         <TextView
             android:id="@+id/main_followers_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:text="@{Integer.toString(viewModel.profile.followers)}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_public_repo_text_view"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/main_followers_label_text_view"
+            app:layout_constraintStart_toEndOf="@id/main_followers_label_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_followers_label_text_view"
             tools:text="13243" />
 
         <TextView
             android:id="@+id/main_following_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="@string/main_label_following"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_followers_label_text_view" />
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/main_followers_label_text_view"
+            app:layout_constraintEnd_toStartOf="@id/main_following_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_followers_label_text_view" />
 
         <TextView
             android:id="@+id/main_following_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{Integer.toString(viewModel.profile.following)}"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/main_following_label_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_followers_text_view"
+            app:layout_constraintTop_toTopOf="@id/main_following_label_text_view"
             tools:text="34543" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
